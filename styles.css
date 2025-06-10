@@ -7,10 +7,15 @@ body {
 }
 #container{
     display: flex;
+    flex-wrap: wrap;
+    height: 600px;
+    width: 600px;
     justify-content: space-between;
     gap:  10px;
 
 }
 .squareDIvs{
+    display: flex;
+    justify-content: center;
     align-items: center;
 }

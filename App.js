@@ -16,14 +16,17 @@ btns.appendChild(colorBtn);
 
 
 let inputSize = Number(prompt("Choose grid size from 10 to 100"));
+typGrid = inputSize
 
 function createSquares(){
-    inputSize = inputSize**2;
+    inputSize = typGrid**2;
 
     for (let i = 1; i <= inputSize; i++){
         const newDiv = document.createElement("div");
          newDiv.classList.add("squareDIvs");
          newDiv.textContent = ('box');
+         newDiv.style.height = (600/typGrid);
+         newDiv.style.height = (600/ typGrid);
          originalDiv.appendChild(newDiv)
     };
 };
