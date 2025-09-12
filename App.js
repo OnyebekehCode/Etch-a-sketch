@@ -19,26 +19,36 @@ function createButtons(num) {
  return BtnsArr
 }
 const newBtns = createButtons(3);//the function call
-let input = Number(prompt("enter the number grid size(? by 16)"))//user input
-const finalGridSize = input * input //calculate type of grid
-function createGrids(finalGridSize){
+
+
+newBtns[0].addEventListener("click", function createGrids(){
+    let input = Number(prompt("enter the number grid size(? by 16)"))//user input
+    let finalGrid = input * input //calculate type of grid
     //loop to display number of grids
-    for (let i = 0; i < finalGridSize; i++) {
+    for (let i = 0; i < finalGrid; i++) {
         const moreDivs = document.createElement("div");//creates more grids
         moreDivs.classList.add("squareDivs")//adds class for styling along with the first grid in global
         newDiv.appendChild(moreDivs); //adds new divs to teh previous div already created 
-    }}
-//function for creating the grids
-const grids = createGrids(finalGridSize)
-drawonGrid();//calling the grid after the final grids has been created
+    }
+    drawonGrid();//calling the drawongrid function after the final grids has been created
+    return finalGrid;
+})
 //function for changing grid to color to effect the draw on grid animation
 function drawonGrid(){
     const gridAffected = document.getElementsByClassName("squareDivs")//get the targeted grids
     for (const div of gridAffected) 
         //loop to change the color of the divs to another color
     {
-        //event listen to capture when mouse enters a grid and changes its css style to the new one i added
+        //event listener to capture when mouse enters a grid and changes its css style to the new one i added
         div.addEventListener("mouseenter", function(){
         this.classList.add("changeColor") 
     });
 }}
+newBtns[1].addEventListener("click", function clearGrid(){
+    const gridPainted = document.getElementsByClassName("changeColor")//get the targeted grids for coloured divs
+    for (const div of gridPainted) 
+    {
+        div.classList.add("clearColor") 
+    };
+    return gridPainted;
+})

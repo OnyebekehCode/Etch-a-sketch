@@ -28,7 +28,13 @@ border-radius: 5px;
     flex-direction: column;
     align-content: center;
     gap: 10px;
+    margin:0, auto;
+    box-sizing: border-box;
+    width: 50%;
 }
 .changeColor{
     background-color: blue;
+}
+.clearColor{
+    background-color: rgb(0, 0, 5);
 }
